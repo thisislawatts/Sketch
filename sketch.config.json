@@ -1,4 +1,7 @@
 {
-  "lightspeedUrl": "http://example.webshopapp.com/en",
-  "localUrl": "http://127.0.0.1:8002"
+  "lightspeedUrl": "https://example.webshopapp.com",
+  "themeId": "123456",
+  "localUrl": "http://127.0.0.1:8002",
+  "emailAddress": "user@example.com",
+  "password": "password"
 }

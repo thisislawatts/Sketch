@@ -7,6 +7,7 @@
 var gulp = require('gulp');
 var browserSync = require('browser-sync').create();
 var connect = require('gulp-connect-php');
+var cached = require('gulp-cached');
 var sass = require('gulp-sass');
 var minify = require('gulp-minify');
 var flatten = require('gulp-flatten');
@@ -15,6 +16,8 @@ var rename = require('gulp-rename');
 var csslint = require('gulp-csslint');
 var jshint = require('gulp-jshint');
 var url = require('url');
+var newer = require('gulp-newer');
+var lightspeedy = require('./libs/lightspeedy');
 
 var Config = require('./sketch.config.json');
 
@@ -23,6 +26,33 @@ const Paths = {
     output: './theme',
     sourceAsset: './src/assets'
 };
+
+gulp.task('lq',() => {
+    gulp.watch( Paths.source + '/**/*.rain', ['upload', 'cp']);
+})
+
+gulp.task('upload', () => {
+    return gulp.src([
+            Paths.source + '/**/*.rain'
+        ])
+        .pipe(newer(Paths.output))
+        .pipe(lightspeedy({
+            storeUrl: Config.lightspeedUrl,
+            themeId: Config.themeId,
+            email: Config.emailAddress,
+            password: Config.password
+        }))
+        .pipe(gulp.dest(Paths.output));
+});
+
+gulp.task('cp', () => {
+    return gulp.src([
+            Paths.source + '/**/*.rain'
+        ])
+        .pipe(newer(Paths.output))
+        .pipe(gulp.dest(Paths.output));
+})
+
 gulp.task('php', function() {
     var localUrl = url.parse(Config.localUrl);
 
@@ -80,3 +110,5 @@ gulp.task('jshint', function () {
 });
 
 gulp.task('default', ['php', 'watch']);
+
+gulp.task('sync', ['default', 'lq'])
