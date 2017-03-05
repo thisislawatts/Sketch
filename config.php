@@ -15,9 +15,9 @@ define ( 'INDEX_PAGE', $config->lightspeedUrl );
 define( 'BASE_URL', trailingslashit($config->localUrl) );
 
 // you can leave the rest 'as is' when not changing the directory structure
-define( 'ASSET_URL', BASE_URL . 'assets/' );
+define( 'ASSET_URL', BASE_URL . 'theme/assets/' );
 define( 'IMAGE_URL', ASSET_URL . 'images' );
 
 define ( 'BASE_PATH', dirname( __FILE__ ) );
-define ( 'TEMPLATE_PATH', BASE_PATH . '/templates' );
+define ( 'TEMPLATE_PATH', BASE_PATH . '/theme' );
 define ( 'ASSET_PATH', BASE_PATH . '/assets' );
