@@ -1,0 +1,5 @@
+<h2>All Brands!</h2>
+
+<pre>
+    {{ brands }}
+</pre>

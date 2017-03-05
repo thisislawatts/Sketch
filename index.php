@@ -15,7 +15,7 @@ require_once dirname( __FILE__ ) . '/config.php';
 /* TODO add to autoload */
 
 /* TODO create loader for stylesheets */
-$loader = new Twig_Loader_Filesystem( 'templates' );
+$loader = new Twig_Loader_Filesystem( 'src' );
 $twig   = new Twig_Environment( $loader, array(
 	'debug' => true
 ) );

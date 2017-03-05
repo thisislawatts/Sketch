@@ -18,6 +18,11 @@ var url = require('url');
 
 var Config = require('./sketch.config.json');
 
+const Paths = {
+    source: './src',
+    output: './theme',
+    sourceAsset: './src/assets'
+};
 gulp.task('php', function() {
     var localUrl = url.parse(Config.localUrl);
 
@@ -33,14 +38,14 @@ gulp.task('php', function() {
 })
 
 gulp.task('watch', function () {
-    gulp.watch('build/scss/**/*.scss', ['sass']);
-    gulp.watch('build/js/**/*.js', ['scripts']);
-    gulp.watch('templates/**/*.rain').on('change', browserSync.reload);
+    gulp.watch(Paths.sourceAsset + '/scss/**/*.scss', ['sass']);
+    gulp.watch(Paths.sourceAsset + '/javascript/**/*.js', ['scripts']);
+    gulp.watch(Paths.source + '/**/*.rain').on('change', browserSync.reload);
 });
 
 // Compile sass into CSS & auto-inject into browsers
 gulp.task('sass', function () {
-    return gulp.src('build/scss/**/*.scss')
+    return gulp.src(Paths.sourceAsset + '/scss/**/*.scss')
         .pipe(flatten())
         .pipe(sass().on('error', sass.logError))
         .pipe(gulp.dest('assets'))
@@ -50,26 +55,26 @@ gulp.task('sass', function () {
         .pipe(rename({
             suffix: '-min'
         }))
-        .pipe(gulp.dest('assets'))
+        .pipe(gulp.dest( Paths.output + '/assets'))
         .pipe(browserSync.stream());
 });
 
 gulp.task('css', function () {
-    gulp.src(['assets/*.css', '!assets/bootstrap-min.css'])
+    gulp.src([ Paths.output + '/assets/*.css', '!' + Paths.output + '/assets/bootstrap-min.css'])
         .pipe(csslint())
         .pipe(csslint.reporter());
 });
 
 gulp.task('scripts', function () {
-    gulp.src('build/js/**/*.js')
+    gulp.src(Paths.sourceAsset + '/javascript/**/*.js')
         .pipe(flatten())
         .pipe(minify())
-        .pipe(gulp.dest('assets'))
+        .pipe(gulp.dest( Paths.output + '/assets'))
         .pipe(browserSync.stream());
 });
 
 gulp.task('jshint', function () {
-    gulp.src('./assets/*.js')
+    gulp.src( Paths.sourceAsset + '/javascript/*.js')
         .pipe(jshint())
         .pipe(jshint.reporter('default'));
 });

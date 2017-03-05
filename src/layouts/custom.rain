@@ -1,0 +1,195 @@
+
+<!DOCTYPE html>
+<html ldir="ltr" lang="en-US" class="no-js">
+<head>
+<!--
+  BBBBBBBBBBBBBBBBBBB  CCCCCCCCCCCCCCCCCCC        MMMMMMMMMM             HHHHHHHHHM
+  B                 B  C                 C      MM          MM         HH          HH
+  B                 B  C                 C     M              M       H              H
+  B     BBBBBBB     B  C      CCCCC      C    M  M          M  M     H    H      H    H
+  B     BB    BB    B  C    CC     CC    C   M   MM        MM   M   H     H      H     H
+  B     BB    BB    B  C   CC            C   M   M M      M M   M   H     H      H     H
+  B     BBBBBBB     B  C   CC            C   M   M  M    M  M   M   H     HHHHHHHH     H
+  B     BB    BB    B  C   CC            C   M   M  M    M  M   M   H     H      H     H
+  B     BB    BB    B  C    CC     CC    C   M   M   M  M   M   M   H     H      H     H
+  B     BBBBBBB     B  C      CCCCC      C    M  M    MM    M  M     H    H      H    H
+  B                 B  C                 C     MM             M       H             HH
+  B                 B  C                 C       MM         MM         HH          HH
+  BBBBBBBBBBBBBBBBBBB  CCCCCCCCCCCCCCCCCCC         MMMMMMMMM             HHHHHHHHHH
+
+  Bravo Charlie Mike Hotel
+  http://bcmh.co.uk
+-->
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+
+	<title></title>
+
+  <link rel="stylesheet" href="./assets/stylesheets/main.css"/>
+
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="#">Bike Rentals</a></li>
+      <li><a href="#TourAndEvents">Tours + Events</a></li>
+      <li><a href="#">Partners</a></li>
+      <li><a href="#">Touch Base</a></li>
+    </ul>
+  </nav>
+
+  <section class="vh100 intro" data-cover-image>
+    <img src="/assets/images/2400/Gravel Track.jpg" alt="Basecamp - Adventure starts here"/>
+    <h1 class="logo">Basecamp</h1>
+  </section>
+  <section class="tac">
+
+    <div class="tac pdg bg-gravel roundel-before">
+      <h2 class="h2 __middot">Adventure Starts Here</h2>
+      <p>We are the heart of your next cycling adventure. From our base on the shores of Lake Annecy in the French Alps, we provide everything you need to enjoy this cycling paradise. We serve the best coffee, we rent the best bikes and we offer the best local knowledge to help you get the most out of your visit.</p>
+    </div>
+
+    <figure class="roundel">
+      <div>
+        <span></span>
+        <i></i>
+      </div>
+    </figure>
+
+    <div id="Location" class="row__with-image bg-sky">
+        <figure class="r__ r__1-1" data-cover-image>
+            <img src="./assets/images/2400/Talloires.jpg" alt="Location – Location – Location" width="2400" height="1600"/>
+        </figure><!--
+    --><div class="tac pdg vac">
+          <h2 class="h2 __with-icon" data-icon="location">Location – Location – Location</h2>
+          <p>Basecamp Talloires is situated on the eastern shore of beautiful Lake Annecy. Only a 40 minute drive from a Geneva International Airport, you could be in cycling paradise before you know it. Talloires is a popular summer destination for relaxing family holidays and thrill-seeking adventurers alike.</p>
+          <a href="#" class="btn btn__light">View in Google Maps</a>
+        </div>
+    </div>
+
+    <!-- Row with background image -->
+    <div id="TrueGrit" class="row tac" data-cover-image>
+      <img width="2048" height="1536" src="/assets/images/GravelRoad.jpg" alt="Background Image"/>
+
+      <div class="pdg-large c-light">
+        <h2 class="h2">True – Grit</h2>
+
+        <p>Adventure is at the heart of Basecamp's DNA and we're passionate aboute enabling everyone to have their own adventure on two wheels. Our fleet of top quality adventure bikes are fully equipped to allow you to venture into the back of beyond.</p>
+
+
+        <a href="#" class="btn btn__light">Rent a Gravel Bike</a>
+      </div>
+    </div>
+
+    <div id="RideTheBest" class="row__with-image">
+        <div class="__arr __arr-r bg-lantern c-light vac tac pdg">
+          <h2 class="h2 __with-icon" data-icon="bike">Ride the Best</h2>
+          <p>At Basecamp, we're passionate about riding and that shows in our selection of top quality rental bikes. Where you are planning an epic road ride into the mountains, getting into the exciting world of gravel riding or simply a leisurely ride around Lake Annecy with the family, we have the bikes for you.</p>
+
+          <h3 class="h3">Bike Rental Available Easter 2017</h3>
+
+          <a href="" class="btn btn__light">Reserve a Bike Now</a>
+        </div><!--
+    --><figure class="img r__ r__1-1" data-cover-image>
+          <img width="460" height="460" src="./assets/images/2400/TunnelColour.jpg" alt="Image with text"/>
+        </figure>
+    </div>
+
+    <section id="ToursAndEvents" class="bg-chalkboard c-light posr" data-cover-image>
+      <img width="2048" height="2048" src="./assets/images/ToursAndEvents.jpg" alt="Tour + Events"/>
+      <div class="pdg tac vac">
+        <div>
+          <h2 class="h2 __with-icon" data-icon="signs">Tours + Events</h2>
+          <p>Our tours and events are all about sharing our love of exploration, knowledge and fun on two wheels. Our classic weekend and week-long road tours giving you the chance to explore the hallowed roads of the Tour de France alongside some hidden gems. </p>
+
+          <a href="#" class="btn btn__light">See our Tours &amp; Events</a>
+        </div>
+      </div>
+    </section>
+
+    <div id="Cafe" class="row__with-image">
+        <figure class="img r__ r__1-1" data-cover-image>
+          <img width="2400" height="2400" src="./assets/images/2400/Coffee.jpg" alt="Fuel – Ride - (Re)Fuel"/>
+        </figure><!--
+    --><div class="__arr __arr-l bg-crockery tac vac pdg roundel-before">
+          <h2 class="h2 __with-icon" data-icon="coffee">Fuel – Ride – (Re)Fuel</h2>
+          <p>The perfect adventure needs the proper fuel and theBasecamp café is the perfect place to do just that. We offer the best coffee this side of Mont Blanc, tasty and freshly made sandwiches, salads and sharing boards to fill an empty stomach, and craft beer and wine to toast the end of a great ride. Open for breakfast, lunch and post-ride snacks every day.</p>
+          </p>
+          <br>
+          <img width="135" src="/assets/svg/rocket.svg" alt="Rocket Espresso Milano"/>
+        </div>
+    </div>
+  </section>
+
+  <figure class="roundel">
+    <div>
+      <span></span>
+      <i></i>
+    </div>
+  </figure>
+
+  <section>
+    <form action="" class="tac pdg roundel-after">
+      <h2 class="h2 mb0">Basecamp opens in May 2017</h2>
+      <p class="p-plus">Sign up to our newsletter now to receive the latest news offers</p>
+
+      <div class="il il__field">
+        <label class="vh" for="email">Enter your email address</label>
+        <input name="email" type="email" placeholder="Optional placeholder"/>
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+  </section>
+
+  <div>
+    <div class="r__ r__3-1 bg-gravel"></div>
+  </div>
+
+
+  <section class="tac pdg">
+    <h2 class="h2">Swatches</h2>
+
+    <ul class="swatches">
+      <li>
+        <figure class="swatch bg-light"></figure>
+        Light: <pre>#ffffff</pre>
+      </li>
+      <li>
+        <figure class="swatch bg-text"></figure>
+        Text: <pre>#3F4454</pre>
+      </li>
+      <li>
+        <figure class="swatch bg-crockery"></figure>
+        Crockery: <pre>#ADEDCF</pre>
+      </li>
+      <li>
+        <figure class="swatch bg-lantern"></figure>
+        Lantern: <pre>#FF0000</pre>
+      </li>
+      <li>
+        <figure class="swatch bg-chalkboard"></figure>
+        Chalkboard: <pre>#404555</pre>
+      </li>
+      <li>
+        <figure class="swatch bg-sky"></figure>
+        Sky: <pre>#B7F4FF</pre>
+      </li>
+      <li>
+        <figure class="swatch bg-gravel"></figure>
+        Gravel: <pre>#---</pre>
+      </li>
+    </ul>
+  </section>
+
+  <footer class="tac pdg bg-gravel">
+      footer Stuff
+  </footer>
+
+  <script src="./assets/dist/bundle.js"></script>
+<script id="__bs_script__">//<![CDATA[
+  if (window.location.host.match('localhost')) {
+    document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.18.8'><\/script>".replace("HOST", location.hostname));
+  }
+//]]></script>
+</body>
+</html>

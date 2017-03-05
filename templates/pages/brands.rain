@@ -1,5 +1,0 @@
-<h2>Brands</h2>
-
-<pre>
-    {{ dump(brands) }}
-</pre>
