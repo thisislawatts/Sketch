@@ -12,7 +12,8 @@
   * @param string $string What to add the trailing slash to.
   * @return string String with trailing slash added.
   */
-function trailingslashit( $string ) {
+function trailingslashit( $string )
+{
         return untrailingslashit( $string ) . '/';
 }
 
@@ -25,6 +26,7 @@ function trailingslashit( $string ) {
   * @param string $string What to remove the trailing slashes from.
   * @return string String without the trailing slashes.
   */
-function untrailingslashit( $string ) {
+function untrailingslashit( $string )
+{
         return rtrim( $string, '/\\' );
 }
