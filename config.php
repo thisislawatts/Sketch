@@ -21,3 +21,4 @@ define( 'IMAGE_URL', ASSET_URL . 'images' );
 define ( 'BASE_PATH', dirname( __FILE__ ) );
 define ( 'TEMPLATE_PATH', BASE_PATH . '/theme' );
 define ( 'ASSET_PATH', BASE_PATH . '/assets' );
+define ( 'CACHE_PATH', BASE_PATH . '/cache' );

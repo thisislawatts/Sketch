@@ -47,24 +47,47 @@ if ( isset( $_GET['path'] ) ) {
 	$uri = $_GET['path'];
 }
 
-$templateData = file_get_contents( INDEX_PAGE . $uri . '?format=json' );
+function loadRemoteContent($url)
+{
+    $uniq = md5($url);
+    $cache_filename = CACHE_PATH . '/' . $uniq;
+    $content = @file_get_contents($url);
 
-if ( false === $templateData ) {
-	// redirect to home page
-	$templateData = file_get_contents( INDEX_PAGE . '?format=json' );
+    if (!$content && file_exists($cache_filename)) {
+        return file_get_contents( $cache_filename);
+    }
+
+    file_put_contents( $cache_filename, $content);
+
+    return $content;
+}
+
+$templateData = loadRemoteContent( INDEX_PAGE . $uri . '?format=json' );
+
+if (false === $templateData) {
+    // Redirect to home page
+    $templateData = loadRemoteContent( INDEX_PAGE . '?format=json' );
 }
 
 $jsonTemplate = json_decode( $templateData, true );
 
-// in case of redirect by lightspeed there is an html string that can not be encoded
+// In case of redirect by lightspeed there is an html string that can not be encoded
 // this happens when clicking on a link in headlines
-if ( json_last_error() > 0 ) {
-	$templateData = file_get_contents( INDEX_PAGE . '?format=json' );
-	$jsonTemplate = json_decode( $templateData, true );
+if (json_last_error() > 0) {
+    $templateData = loadRemoteContent( INDEX_PAGE . '?format=json' );
+    $jsonTemplate = json_decode( $templateData, true );
 }
 
-$jsonTemplate['controller']  = $jsonTemplate;
+// Working offline?
+if (is_null($jsonTemplate)) {
+    $jsonTemplate = [
+        'template' => 'pages/index.rain'
+    ];
+}
+
+
+$jsonTemplate['controller'] = $jsonTemplate;
 $jsonTemplate['development'] = true;
-$jsonTemplate['base_url']    = BASE_URL;
+$jsonTemplate['base_url'] = BASE_URL;
 
 echo $template->render( $jsonTemplate );
