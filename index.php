@@ -45,11 +45,10 @@ $twig->addExtension( new DrifterTwigExtension() );
 $template = $twig->loadTemplate( 'layouts/custom.rain' );
 
 $templateData = '';
-
-
 $protocol = 'http://';
-if ( isset( $_SERVER['HTTPS'] ) && $_SERVER['HTTPS'] != 'off' ) {
-	$protocol = 'https://';
+
+if (isset( $_SERVER['HTTPS'] ) && $_SERVER['HTTPS'] != 'off') {
+    $protocol = 'https://';
 }
 
 $uri = '';
