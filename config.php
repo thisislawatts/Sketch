@@ -8,7 +8,7 @@
 $config = json_decode( file_get_contents( './sketch.config.json' ) );
 
 // hook up with a live demo shop
-define ( 'SHOP_ID', '172820');
+define ( 'SHOP_ID', $config->lightspeedShopId );
 define ( 'INDEX_PAGE', $config->lightspeedUrl );
 
 // the base url from where your website is visible in the browser
