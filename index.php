@@ -11,8 +11,18 @@ require_once dirname( __FILE__ ) . '/includes/DrifterTwigExtension.php';
 
 require_once dirname( __FILE__ ) . '/config.php';
 
+/**
+ * Router
+ *
+ *
+ * Serve static resources as-is
+ */
 
-/* TODO add to autoload */
+$req = parse_url( $_SERVER['REQUEST_URI'] );
+
+if (preg_match('/\.(?:png|jpg|jpeg|gif|css|js|svg|woff|woff2|eot)$/', $req['path'])) {
+    return false;
+}
 
 /* TODO create loader for stylesheets */
 $loader = new Twig_Loader_Filesystem( 'src' );
