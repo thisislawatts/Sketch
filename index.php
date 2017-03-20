@@ -6,6 +6,8 @@
  */
 
 require_once dirname( __FILE__ ) . '/vendor/autoload.php';
+
+/* TODO add to autoload */
 require_once dirname( __FILE__ ) . '/includes/Helpers.php';
 require_once dirname( __FILE__ ) . '/includes/DrifterTwigExtension.php';
 
@@ -27,16 +29,17 @@ if (preg_match('/\.(?:png|jpg|jpeg|gif|css|js|svg|woff|woff2|eot)$/', $req['path
 /* TODO create loader for stylesheets */
 $loader = new Twig_Loader_Filesystem( 'src' );
 $twig   = new Twig_Environment( $loader, array(
-	'debug' => true
+        'debug' => true
 ) );
 
-$active_test = new Twig_SimpleTest( 'active', function ( $value ) {
-	if ( isset( $value ) && $value == $_GET['template'] ) {
-		return true;
-	}
+$active_test = new Twig_SimpleTest( 'active', function ($value) {
+    if (isset( $value ) && $value == $_GET['template']) {
+        return true;
+    }
 
-	return false;
+    return false;
 } );
+
 $twig->addTest( $active_test );
 
 $twig->addExtension( new Twig_Extension_Debug() );
@@ -51,9 +54,26 @@ if (isset( $_SERVER['HTTPS'] ) && $_SERVER['HTTPS'] != 'off') {
     $protocol = 'https://';
 }
 
+
 $uri = '';
-if ( isset( $_GET['path'] ) ) {
-	$uri = $_GET['path'];
+if (isset( $_GET['path'] )) {
+    $uri = $_GET['path'];
+}
+
+if (isset( $_SERVER['PATH_INFO'])) {
+    $uri = $_SERVER['PATH_INFO'];
+
+    if (preg_match('/^\//', $uri)) {
+        $uri = str_replace('/', '', $uri);
+    }
+}
+
+if (isset( $_SERVER['REQUEST_URI'])) {
+    $uri = $_SERVER['REQUEST_URI'];
+
+    if (preg_match('/^\//', $uri)) {
+        $uri = preg_replace('/\//', '', $uri, 1);
+    }
 }
 
 function loadRemoteContent($url)
