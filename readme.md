@@ -54,7 +54,6 @@ src/
   layouts/
   pages/
   snippets/
-libs/
 theme/
  assets/
  layouts/
